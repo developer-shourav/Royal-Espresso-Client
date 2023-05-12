@@ -18,12 +18,22 @@ const CoffeeCard = ({ coffee }) => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log('Items deleted', id);
-        Swal.fire(
-          'Item Deleted!',
-          'Your Coffee Deleted Successfully.',
-          'success'
-        )
+        fetch(`http://localhost:7000/coffees/${id}`,{
+          method:'DELETE'
+
+        } )
+        .then( res => res.json())
+        .then( data => {
+          console.log(data);
+          if(data.deletedCount > 0){
+            Swal.fire(
+              'Item Deleted!',
+              'Your Coffee Deleted Successfully.',
+              'success'
+            )
+          }
+        })
+       
       }
     })
   }
