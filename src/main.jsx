@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import AddCoffee from './components/AddCoffee/AddCoffee.jsx'
+import UpdateCoffee from './components/UpdateCoffee/UpdateCoffee.jsx'
 
 
 const router = createBrowserRouter([
@@ -11,8 +13,12 @@ const router = createBrowserRouter([
     element: <App> </App>
   },
   {
-    path: '/about',
-    element: <h2>Here is about me</h2>
+    path: '/addCoffee',
+    element: <AddCoffee> </AddCoffee>
+  },
+  {
+    path: '/updateCoffee',
+    element: <UpdateCoffee> </UpdateCoffee>
   },
 ]);
 
