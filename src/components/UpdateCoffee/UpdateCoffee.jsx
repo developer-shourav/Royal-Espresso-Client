@@ -1,6 +1,7 @@
 import React from 'react';
 import useTitle from '../../hooks/useTitle';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateCoffee = () => {
     // For Dynamic Title
@@ -21,7 +22,7 @@ const UpdateCoffee = () => {
         const details = form.details.value;
         const photo = form.photo.value;
    
-        const newCoffee = {
+        const updatedCoffee = {
            name,
            quantity,
            supplier,
@@ -33,12 +34,12 @@ const UpdateCoffee = () => {
    
         // Send Data to the server
    
-        fetch('http://localhost:7000/addCoffee', {
-           method:'POST',
+        fetch(`http://localhost:7000/updateCoffee/${_id}`, {
+           method:'PUT',
            headers: {
                'content-type':'application/json'
            },
-           body: JSON.stringify(newCoffee)
+           body: JSON.stringify(updatedCoffee)
         })
         .then( res => res.json())
         .then( data => {
