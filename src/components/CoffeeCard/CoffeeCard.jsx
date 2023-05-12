@@ -5,7 +5,7 @@ import {HiPencil} from 'react-icons/hi';
 import Swal from 'sweetalert2'
 import { Link } from "react-router-dom";
 
-const CoffeeCard = ({ coffee }) => {
+const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
   const { _id ,name, quantity, supplier, taste, category, details, photo } = coffee;
 
 
@@ -30,13 +30,15 @@ const CoffeeCard = ({ coffee }) => {
         } )
         .then( res => res.json())
         .then( data => {
-          console.log(data);
           if(data.deletedCount > 0){
             Swal.fire(
               'Item Deleted!',
               'Your Coffee Deleted Successfully.',
               'success'
             )
+
+            const remainingCoffees = coffees.filter( cof => cof._id !== id);
+            setCoffees(remainingCoffees)
           }
         })
        
