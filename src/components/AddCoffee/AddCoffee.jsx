@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import useTitle from "../../assets/hooks/useTitle";
-
+import Swal from 'sweetalert2';
 const AddCoffee = () => {
   // For Dynamic Title
   useTitle("AddCoffee");
@@ -26,7 +26,8 @@ const AddCoffee = () => {
         details,
         photo
      };
-     console.log(newCoffee);
+
+     // Send Data to the server
 
      fetch('http://localhost:7000/addCoffee', {
         method:'POST',
@@ -37,9 +38,15 @@ const AddCoffee = () => {
      })
      .then( res => res.json())
      .then( data => {
-        console.log(data);
-        alert('Coffee Adding Successful')
-        form.reset()
+        if(data?.acknowledged){
+            Swal.fire(
+                'Good job!',
+                'Your Coffee Added Successfully!',
+                'success'
+              )
+            form.reset()
+        }
+        
      })
      
   }
