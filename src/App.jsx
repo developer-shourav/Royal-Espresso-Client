@@ -7,7 +7,7 @@ function App() {
   console.log(allCoffees);
   return (
     <div className="my-10 container mx-auto">
-       <h2 className="text-3xl text-center mb-5">Total Coffees: {allCoffees?.length}</h2>
+       <h2 className="text-3xl text-center font-bold mb-10">Total Coffees: {allCoffees?.length}</h2>
 
        {/* ----------Coffee Card--------- */}
        <div className="grid md:grid-cols-2 gap-8 ">
