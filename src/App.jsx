@@ -1,14 +1,12 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 function App() {
+  const allCoffees = useLoaderData();
+  console.log(allCoffees);
   return (
     <>
-      <button className="btn">Button</button>
-      <button className="btn btn-primary">Button</button>
-      <button className="btn btn-secondary">Button</button>
-      <button className="btn btn-accent">Button</button>
-      <button className="btn btn-ghost">Button</button>
-      <button className="btn btn-link">Button</button>
+       <h2 className="text-3xl text-center">Total Coffees: {allCoffees?.length}</h2>
     </>
   );
 }

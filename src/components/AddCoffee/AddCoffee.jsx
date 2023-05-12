@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import useTitle from "../../assets/hooks/useTitle";
+import useTitle from "../../hooks/useTitle";
 import Swal from 'sweetalert2';
 const AddCoffee = () => {
   // For Dynamic Title
@@ -70,6 +70,7 @@ const AddCoffee = () => {
                 placeholder="Coffee Name"
                 name="name"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -84,6 +85,7 @@ const AddCoffee = () => {
                 name="quantity"
                 placeholder="Available Quantity"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -102,6 +104,7 @@ const AddCoffee = () => {
                 placeholder="Supplier Name"
                 name="supplier"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -116,6 +119,7 @@ const AddCoffee = () => {
                 name="taste"
                 placeholder="Taste"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -134,6 +138,7 @@ const AddCoffee = () => {
                 placeholder="Category"
                 name="category"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -148,6 +153,7 @@ const AddCoffee = () => {
                 name="details"
                 placeholder="Details"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -166,6 +172,7 @@ const AddCoffee = () => {
                 placeholder="Photo url"
                 name="photo"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>

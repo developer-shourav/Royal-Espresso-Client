@@ -1,5 +1,5 @@
 import React from 'react';
-import useTitle from '../../assets/hooks/useTitle';
+import useTitle from '../../hooks/useTitle';
 
 const UpdateCoffee = () => {
     // For Dynamic Title
